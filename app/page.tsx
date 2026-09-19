@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { useApp } from "@/lib/app-context";
 import { useTranslations } from "@/lib/translations-context";
@@ -133,9 +134,7 @@ export default function LandingPage() {
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">
-                    {t["nav"][
-                      ["questionnaire", "uuDatabase", "templateGenerator", "riskAnalysis", "analytics", "compliance"][i]
-                    ]}
+                    {t.nav[["questionnaire", "uuDatabase", "templateGenerator", "riskAnalysis", "analytics", "compliance"][i] as keyof typeof t.nav]}
                   </h3>
                   <p className="text-sm text-muted-foreground">{feature.desc}</p>
                 </div>

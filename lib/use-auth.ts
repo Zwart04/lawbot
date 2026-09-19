@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "@/lib/store";
 import { loginSuccess, registerSuccess, logout, restoreAuth } from "@/lib/auth-slice";

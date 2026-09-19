@@ -1,3 +1,4 @@
+"use client";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { useApp } from "@/lib/app-context";
@@ -134,7 +135,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 }`}
               >
                 <Icon className="h-4 w-4" />
-                <span suppressHydrationWarning>{t[item.key as keyof typeof t.nav]}</span>
+                <span suppressHydrationWarning>{t.nav[item.key as keyof typeof t.nav]}</span>
               </Link>
             );
           })}

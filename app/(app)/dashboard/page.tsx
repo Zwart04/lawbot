@@ -15,10 +15,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TrendingBar, TrendingUpDown } from "lucide-react";
+import { TrendingUpDown } from "lucide-react";
 import {
-  Chart as ChartComponent,
-  ArcElement,
   Tooltip,
   Legend,
   ResponsiveContainer,
@@ -38,7 +36,7 @@ import {
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-ChartComponent.register(ArcElement, Tooltip, Legend);
+
 
 const COLORS = ["#6366f1", "#8b5cf6", "#a855f7", "#d946ef", "#ec4899", "#f43f5e"];
 

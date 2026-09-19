@@ -191,7 +191,7 @@ export default function FinanceJournalPage() {
                 <Label>{t.financeJournal.category}</Label>
                 <Select
                   value={newEntry.category}
-                  onValueChange={(v) => setNewEntry((prev) => ({ ...prev, category: v }))}
+                  onValueChange={(v) => setNewEntry((prev) => ({ ...prev, category: v || "" }))}
                 >
                   <SelectTrigger>
                     <SelectValue placeholder={t.financeJournal.category} />
@@ -243,19 +243,19 @@ export default function FinanceJournalPage() {
                         <div className="flex-1 space-y-2">
                           <Input
                             value={editForm?.description || ""}
-                            onChange={(e) => setEditForm((prev) => ({ ...prev, description: e.target.value }))}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEditForm((prev: { description?: string; amount?: string | number; category?: string }) => ({ ...prev, description: e.target.value }))}
                             className="h-8 text-sm"
                           />
                           <div className="flex gap-2">
                             <Input
                               type="number"
                               value={editForm?.amount || 0}
-                              onChange={(e) => setEditForm((prev) => ({ ...prev, amount: e.target.value }))}
+                              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEditForm((prev: { description?: string; amount?: string | number; category?: string }) => ({ ...prev, amount: e.target.value }))}
                               className="h-8 text-sm flex-1"
                             />
                             <Select
                               value={editForm?.category || ""}
-                              onValueChange={(v) => setEditForm((prev) => ({ ...prev, category: v }))}
+                              onValueChange={(v) => setEditForm((prev: { description?: string; amount?: string | number; category?: string }) => ({ ...prev, category: v || "" }))}
                             >
                               <SelectTrigger className="h-8 w-32">
                                 <SelectValue />

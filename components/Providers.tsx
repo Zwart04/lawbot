@@ -1,7 +1,9 @@
+"use client";
 import { Provider } from "react-redux";
 import { store } from "@/lib/store";
 import { AppProvider } from "@/lib/app-context";
-import { Toaster } from "components/ui/toast";
+import { TranslationsProvider } from "@/lib/translations-context";
+import { Toaster } from "@/components/ui/toast";
 import { useEffect, useState } from "react";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
@@ -16,10 +18,12 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <Provider store={store}>
-      <AppProvider>
-        {children}
-        <Toaster />
-      </AppProvider>
+      <TranslationsProvider>
+        <AppProvider>
+          {children}
+          <Toaster />
+        </AppProvider>
+      </TranslationsProvider>
     </Provider>
   );
 }
